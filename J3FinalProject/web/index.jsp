@@ -9,26 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Page</title>
+        <link rel="stylesheet" type="text/css" href="/J3FinalProject/css/main.css">
+        <title>Rose Banquet</title>
     </head>
     <body>
-        <h1>Test Page</h1>
-        <a href="getClientID.jsp"><button>Get Client By ID</button></a><br>
-        <a href="retrieveClients.jsp"><button>Get All Clients</button></a><br>
-        <a href="editClient.jsp"><button>Update a Client By ID</button></a><br>
-        <a href="deleteClient.jsp"><button>Delete a Client By ID</button></a><br>
-        <a href="addClient.jsp"><button>Create a new Client</button></a><br>
-        <br>
-        <a href="getBookingID.jsp"><button>Get Booking By ID</button></a><br>
-        <a href="retrieveBookings.jsp"><button>Get All Bookings</button></a><br>
-        <a href="editBooking.jsp"><button>Update a Booking By ID</button></a><br>
-        <a href="deleteBooking.jsp"><button>Delete a Booking By ID</button></a><br>
-        <a href="addBooking.jsp"><button>Create a new Booking</button></a><br>
-        <br>
-        <a href="getHallID.jsp"><button>Get Hall By ID</button></a><br>
-        <a href="retrieveHalls.jsp"><button>Get All Halls</button></a><br>
-        <a href="editHall.jsp"><button>Update a Hall By ID</button></a><br>
-        <a href="deleteHall.jsp"><button>Delete a Hall By ID</button></a><br>
-        <a href="addHall.jsp"><button>Create a new Hall</button></a><br>
+        <div class="main-div">
+            <img src="/J3FinalProject/img/rose.png" class="logo-img" alt="rose">
+            <h1>Rose Banquet Hall Booking System</h1>
+            <br>
+            <a href="bookHall.jsp" class="menu-btn">Book Hall</a>
+            <br><br><br><br>
+            <a href="register.jsp" class="menu-btn">Register Client</a>
+             <br><br><br><br>
+            <a href="hallAdmin.jsp" class="menu-btn">Hall Admin</a>
+        </div>
     </body>
 </html>

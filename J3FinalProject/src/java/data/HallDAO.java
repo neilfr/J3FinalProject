@@ -28,7 +28,7 @@ public class HallDAO {
         DBManager dbm = new DBManager();
         String sql1="UPDATE bookingsystem_db.hall SET";
         String sql2=" Name='"+hall.getName()+"'";
-        String sql3=" WHERE hall.ID="+hall.getID()+";";
+        String sql3=" WHERE hall.ID= "+hall.getID()+";";
         String sql=sql1+sql2+sql3;
         System.out.println("updateHall SQL is: "+sql);
         dbm.executeUpdate(sql);        

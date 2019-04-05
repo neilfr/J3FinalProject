@@ -42,6 +42,8 @@ public class BookingSystemControllerServlet extends HttpServlet {
         String route=request.getParameter("route");
         System.out.println("MY ROUTE IS: "+route);
         
+        
+        
         // Client routes
         if(route.equals("addClient")){
             ClientDAO clientDAO = new ClientDAO();
@@ -74,8 +76,17 @@ public class BookingSystemControllerServlet extends HttpServlet {
             booking.setHallID(Integer.parseInt(request.getParameter("hallID")));
             booking.setClientID(Integer.parseInt(request.getParameter("clientID")));
             booking.setDate(request.getParameter("date"));
-            bookingDAO.createBooking(booking);
-            response.sendRedirect("index.jsp");
+            
+            System.out.println(request.getParameter("hallID"));
+            //Check Duplicate
+            if (!bookingDAO.hasDuplicate(Integer.parseInt(request.getParameter("hallID")),request.getParameter("date"))) {
+                bookingDAO.createBooking(booking);
+                response.sendRedirect("bookingCreated.jsp?date="+request.getParameter("date"));
+                
+            } else {
+               response.sendRedirect("bookHall.jsp?errorMsg=Sorry Hall is not Available on "+request.getParameter("date"));
+            }
+                
         }
         if(route.equals("updateBooking")){
             BookingDAO bookingDAO=new BookingDAO();

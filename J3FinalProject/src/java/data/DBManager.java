@@ -12,8 +12,8 @@ import java.sql.*;
  */
 public class DBManager {
     String conn = "jdbc:mysql://localhost:3306/bookingsystem_db?autoReconnect=True&useSSL=false";
-    String user = "root";
-    String pass = "root";
+    String user = "jarred788";
+    String pass = "544039";
     
     public Connection getConnection(){
         Connection con = null;

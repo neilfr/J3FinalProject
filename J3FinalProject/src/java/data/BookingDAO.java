@@ -9,6 +9,8 @@ import data.DBManager;
 import beans.Booking;
 import java.util.ArrayList;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author neilf
@@ -41,6 +43,22 @@ public class BookingDAO {
         String sql=sql1+sql2;
         System.out.println("deleteBookingByID sql is:"+sql);
         dbm.executeUpdate(sql);
+    }
+    
+    public boolean hasDuplicate(int ID, String date) {
+        DBManager dbm = new DBManager();
+        ResultSet rs = dbm.executeQuery("SELECT * FROM bookingsystem_db.booking WHERE hallID = "+ID+"");
+        try {
+            int amount = 0;
+            while(rs.next()) {
+                if (rs.getString(4).equals(date)) {
+                    return true;
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return false;
     }
     
     public ArrayList<Booking> retrieveAllBookings(){
